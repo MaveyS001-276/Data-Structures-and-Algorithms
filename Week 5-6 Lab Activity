@@ -7,6 +7,23 @@ namespace BigONotation
             InitializeComponent();
         }
 
+        private void HighlightButton(Button active)
+        {
+            foreach (Control c in this.Controls)
+            {
+                if (c is Button b && b != btnClear)
+                {
+                    b.BackColor = Color.White;
+                    b.ForeColor = Color.Black;
+                }
+            }
+
+            if (active != null)
+            {
+                active.BackColor = Color.DarkBlue;
+                active.ForeColor = Color.White;
+            }
+        }
         private void lstOutput_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -15,6 +32,7 @@ namespace BigONotation
         private void btnO1_Click(object sender, EventArgs e)
         {
             lstOutput.Items.Clear();
+            HighlightButton((Button)sender);
 
             lstOutput.Items.Add("=== Example 1 ===");
             lstOutput.Items.Add(" ");
@@ -43,6 +61,7 @@ namespace BigONotation
         private void btnLogN_Click(object sender, EventArgs e)
         {
             lstOutput.Items.Clear();
+            HighlightButton((Button)sender);
 
             lstOutput.Items.Add("=== Example 1: Binary-search-style guessing ===");
             lstOutput.Items.Add(" ");
@@ -100,6 +119,7 @@ namespace BigONotation
         private void btnON_Click(object sender, EventArgs e)
         {
             lstOutput.Items.Clear();
+            HighlightButton((Button)sender);
 
             lstOutput.Items.Add("=== Example 1: Print Numbers ===");
             lstOutput.Items.Add(" ");
@@ -139,6 +159,7 @@ namespace BigONotation
         private void btnONSquared_Click(object sender, EventArgs e)
         {
             lstOutput.Items.Clear();
+            HighlightButton((Button)sender);
 
             lstOutput.Items.Add("=== Example 1: Two loops ===");
             lstOutput.Items.Add(" ");
@@ -209,6 +230,7 @@ namespace BigONotation
         private void btnO2N_Click(object sender, EventArgs e)
         {
             lstOutput.Items.Clear();
+            HighlightButton((Button)sender);
 
             lstOutput.Items.Add("=== Example 1: Password Choices ===");
             lstOutput.Items.Add(" ");
@@ -264,6 +286,7 @@ namespace BigONotation
         private void button1_Click(object sender, EventArgs e)
         {
             lstOutput.Items.Clear();
+            HighlightButton(null);
         }
     }
 }
