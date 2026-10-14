@@ -1,0 +1,292 @@
+namespace BigONotation
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void HighlightButton(Button active)
+        {
+            foreach (Control c in this.Controls)
+            {
+                if (c is Button b && b != btnClear)
+                {
+                    b.BackColor = Color.White;
+                    b.ForeColor = Color.Black;
+                }
+            }
+
+            if (active != null)
+            {
+                active.BackColor = Color.DarkBlue;
+                active.ForeColor = Color.White;
+            }
+        }
+        private void lstOutput_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnO1_Click(object sender, EventArgs e)
+        {
+            lstOutput.Items.Clear();
+            HighlightButton((Button)sender);
+
+            lstOutput.Items.Add("=== Example 1 ===");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("string[] employees = {\"EMP001\", \"EMP002\", \"EMP003\"};");
+            lstOutput.Items.Add("employees[2]");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("Output: EMP003");
+            lstOutput.Items.Add("");
+
+            lstOutput.Items.Add("=== Example 2 ===");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("string[] grades = {\"90\", \"85\", \"95\"};");
+            lstOutput.Items.Add("grades[1]");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("Output: 85");
+            lstOutput.Items.Add("");
+
+            lstOutput.Items.Add("=== Example 3 ===");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("string[] days = {\"Mon\", \"Tue\", \"Wed\", \"Thu\"};");
+            lstOutput.Items.Add("days[3]");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("Output: Thu");
+        }
+
+        private void btnLogN_Click(object sender, EventArgs e)
+        {
+            lstOutput.Items.Clear();
+            HighlightButton((Button)sender);
+
+            lstOutput.Items.Add("=== Example 1: Binary-search-style guessing ===");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("int low = 1;");
+            lstOutput.Items.Add("int high = 100;");
+            lstOutput.Items.Add("while(low <= high)");
+            lstOutput.Items.Add("{");
+            lstOutput.Items.Add("    int middle = (low + high) / 2;");
+            lstOutput.Items.Add("    Console.WriteLine(middle);");
+            lstOutput.Items.Add("    high = middle - 1;");
+            lstOutput.Items.Add("}");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("Output:");
+            lstOutput.Items.Add("50");
+            lstOutput.Items.Add("25");
+            lstOutput.Items.Add("12");
+            lstOutput.Items.Add("6");
+            lstOutput.Items.Add("3");
+            lstOutput.Items.Add("1");
+            lstOutput.Items.Add(" ");
+
+            lstOutput.Items.Add("=== Example 2: Halving a number ===");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("int n = 64;");
+            lstOutput.Items.Add("while(n > 1)");
+            lstOutput.Items.Add("{");
+            lstOutput.Items.Add("    n = n / 2;");
+            lstOutput.Items.Add("    Console.WriteLine(n);");
+            lstOutput.Items.Add("}");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("Output:");
+            lstOutput.Items.Add("32");
+            lstOutput.Items.Add("16");
+            lstOutput.Items.Add("8");
+            lstOutput.Items.Add("4");
+            lstOutput.Items.Add("2");
+            lstOutput.Items.Add("1");
+            lstOutput.Items.Add(" ");
+
+            lstOutput.Items.Add("=== Example 3: Counting digits ===");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("int n = 98765;");
+            lstOutput.Items.Add("int count = 0;");
+            lstOutput.Items.Add("while(n > 0)");
+            lstOutput.Items.Add("{");
+            lstOutput.Items.Add("    n = n / 10;");
+            lstOutput.Items.Add("    count++;");
+            lstOutput.Items.Add("}");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("Output:");
+            lstOutput.Items.Add("Digits: 5");
+            lstOutput.Items.Add(" ");
+        }
+
+        private void btnON_Click(object sender, EventArgs e)
+        {
+            lstOutput.Items.Clear();
+            HighlightButton((Button)sender);
+
+            lstOutput.Items.Add("=== Example 1: Print Numbers ===");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("int[] numbers = {10,20,30,40,50};");
+            lstOutput.Items.Add("for(int i=0; i<numbers.Length; i++)");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("Output:");
+            lstOutput.Items.Add("10");
+            lstOutput.Items.Add("20");
+            lstOutput.Items.Add("30");
+            lstOutput.Items.Add("40");
+            lstOutput.Items.Add("50");
+            lstOutput.Items.Add("");
+
+            lstOutput.Items.Add("=== Example 2: Print Names ===");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("string[] names = {\"Salim\", \"Mavey\", \"Ken\"};");
+            lstOutput.Items.Add("for(int i=0; i<names.Length; i++)");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("Output:");
+            lstOutput.Items.Add("Salim");
+            lstOutput.Items.Add("Mavey");
+            lstOutput.Items.Add("Ken");
+            lstOutput.Items.Add("");
+
+            lstOutput.Items.Add("=== Example 3: Count Vowels ===");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("string word = \"Computer\";");
+            lstOutput.Items.Add("foreach(char c in word)");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("Output:");
+            lstOutput.Items.Add("o");
+            lstOutput.Items.Add("u");
+            lstOutput.Items.Add("e");
+        }
+
+        private void btnONSquared_Click(object sender, EventArgs e)
+        {
+            lstOutput.Items.Clear();
+            HighlightButton((Button)sender);
+
+            lstOutput.Items.Add("=== Example 1: Two loops ===");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("int[] numbers = {1, 2, 3};");
+            lstOutput.Items.Add("for(int i=0; i<numbers.Length; i++)");
+            lstOutput.Items.Add("{");
+            lstOutput.Items.Add("    for(int j=0; j<numbers.Length; j++)");
+            lstOutput.Items.Add("    {");
+            lstOutput.Items.Add("        Console.WriteLine(numbers[i] + \" \" + numbers[j]);");
+            lstOutput.Items.Add("    }");
+            lstOutput.Items.Add("}");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("Output:");
+            lstOutput.Items.Add("1 1");
+            lstOutput.Items.Add("1 2");
+            lstOutput.Items.Add("1 3");
+            lstOutput.Items.Add("2 1");
+            lstOutput.Items.Add("2 2");
+            lstOutput.Items.Add("2 3");
+            lstOutput.Items.Add("3 1");
+            lstOutput.Items.Add("3 2");
+            lstOutput.Items.Add("3 3");
+            lstOutput.Items.Add(" ");
+
+            lstOutput.Items.Add("=== Example 2: Pairs of names ===");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("string[] names = {\"Salim\", \"Mavey\", \"Ken\"};");
+            lstOutput.Items.Add("for(int i=0; i<names.Length; i++)");
+            lstOutput.Items.Add("{");
+            lstOutput.Items.Add("    for(int j=0; j<names.Length; j++)");
+            lstOutput.Items.Add("    {");
+            lstOutput.Items.Add("        Console.WriteLine(names[i] + \" & \" + names[j]);");
+            lstOutput.Items.Add("    }");
+            lstOutput.Items.Add("}");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("Output:");
+            lstOutput.Items.Add("Salim & Salim");
+            lstOutput.Items.Add("Salim & Mavey");
+            lstOutput.Items.Add("Salim & Ken");
+            lstOutput.Items.Add("Mavey & Salim");
+            lstOutput.Items.Add("Mavey & Mavey");
+            lstOutput.Items.Add("Mavey & Ken");
+            lstOutput.Items.Add("Ken & Salim");
+            lstOutput.Items.Add("Ken & Mavey");
+            lstOutput.Items.Add("Ken & Ken");
+            lstOutput.Items.Add(" ");
+
+            lstOutput.Items.Add("=== Example 3: Star square ===");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("int size = 4;");
+            lstOutput.Items.Add("for(int i=0; i<size; i++)");
+            lstOutput.Items.Add("{");
+            lstOutput.Items.Add("    for(int j=0; j<size; j++)");
+            lstOutput.Items.Add("    {");
+            lstOutput.Items.Add("        Console.Write(\"* \");");
+            lstOutput.Items.Add("    }");
+            lstOutput.Items.Add("    Console.WriteLine();");
+            lstOutput.Items.Add("}");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("Output:");
+            lstOutput.Items.Add("* * * *");
+            lstOutput.Items.Add("* * * *");
+            lstOutput.Items.Add("* * * *");
+            lstOutput.Items.Add("* * * *");
+            lstOutput.Items.Add(" ");
+        }
+
+        private void btnO2N_Click(object sender, EventArgs e)
+        {
+            lstOutput.Items.Clear();
+            HighlightButton((Button)sender);
+
+            lstOutput.Items.Add("=== Example 1: Password Choices ===");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("int positions = 4;");
+            lstOutput.Items.Add("int possibilities = 1;");
+            lstOutput.Items.Add("for(int i=0; i<positions; i++)");
+            lstOutput.Items.Add("{");
+            lstOutput.Items.Add("    possibilities *= 2;");
+            lstOutput.Items.Add("}");
+            lstOutput.Items.Add("Console.WriteLine(\"Possible passwords: \" + possibilities);");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("Output:");
+            lstOutput.Items.Add("Possible passwords: 16");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("AAAA  AAAB  AABA  AABB");
+            lstOutput.Items.Add("ABAA  ABAB  ABBA  ABBB");
+            lstOutput.Items.Add("BAAA  BAAB  BABA  BABB");
+            lstOutput.Items.Add("BBAA  BBAB  BBBA  BBBB");
+            lstOutput.Items.Add(" ");
+
+            lstOutput.Items.Add("=== Example 2: True/False Quiz ===");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("int questions = 3;");
+            lstOutput.Items.Add("int answerSheets = 1;");
+            lstOutput.Items.Add("for(int i=0; i<questions; i++)");
+            lstOutput.Items.Add("{");
+            lstOutput.Items.Add("    answerSheets *= 2;");
+            lstOutput.Items.Add("}");
+            lstOutput.Items.Add("Console.WriteLine(\"Possible answer sheets: \" + answerSheets);");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("Output:");
+            lstOutput.Items.Add("Possible answer sheets: 8");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("TTT  TTF  TFT  TFF");
+            lstOutput.Items.Add("FTT  FTF  FFT  FFF");
+            lstOutput.Items.Add(" ");
+
+            lstOutput.Items.Add("=== Example 3: On/Off Switches ===");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("int switches = 10;");
+            lstOutput.Items.Add("int combinations = 1;");
+            lstOutput.Items.Add("for(int i=0; i<switches; i++)");
+            lstOutput.Items.Add("{");
+            lstOutput.Items.Add("    combinations *= 2;");
+            lstOutput.Items.Add("}");
+            lstOutput.Items.Add("Console.WriteLine(\"Possible combinations: \" + combinations);");
+            lstOutput.Items.Add(" ");
+            lstOutput.Items.Add("Output:");
+            lstOutput.Items.Add("Possible combinations: 1024");
+            lstOutput.Items.Add(" ");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            lstOutput.Items.Clear();
+            HighlightButton(null);
+        }
+    }
+}
